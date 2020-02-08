@@ -10,6 +10,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "loadash": "^1.0.0",
     "muta-sdk": "^0.6.0",
     "node-repl-await": "^0.1.1",
     "tslib": "^1"
