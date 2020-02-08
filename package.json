@@ -1,7 +1,7 @@
 {
   "name": "muta-cli",
-  "version": "0.0.0",
-  "author": "huwenchao @huwenchao",
+  "version": "0.0.1",
+  "author": "me@huwenchao.com",
   "bin": {
     "muta-cli": "./bin/run"
   },
@@ -41,7 +41,8 @@
   ],
   "homepage": "https://github.com/huwenchao/muta-cli",
   "keywords": [
-    "oclif"
+    "oclif",
+    "muta"
   ],
   "license": "MIT",
   "main": "lib/index.js",
