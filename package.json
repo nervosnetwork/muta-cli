@@ -1,6 +1,6 @@
 {
   "name": "muta-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "me@huwenchao.com",
   "bin": {
     "muta-cli": "./bin/run"
