@@ -49,14 +49,14 @@ export default class REPL extends Command {
     }
 
     const c = repl.start({ prompt: '> ', eval: myEval }).context;
-    const loadash = require('lodash');
-    c.loadash = loadash;
+    const lodash = require('lodash');
+    c.lodash = lodash;
     c.muta_sdk = require('muta-sdk');
     const Muta = c.muta_sdk.Muta;
     c.muta = c.muta_sdk.Muta.createDefaultMutaInstance();
     c.client = c.muta.client();
     const mnemonic = Muta.hdWallet.generateMnemonic();
     c.wallet = new Muta.hdWallet(mnemonic);
-    c.accounts = loadash.range(20).map(i => c.wallet.deriveAccount(i));
+    c.accounts = lodash.range(20).map(i => c.wallet.deriveAccount(i));
   }
 }

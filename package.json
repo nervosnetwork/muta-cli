@@ -11,7 +11,7 @@
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
     "loadash": "^1.0.0",
-    "muta-sdk": "^0.6.0",
+    "muta-sdk": "^0.7.0-alpha.0",
     "node-repl-await": "^0.1.1",
     "tslib": "^1"
   },
@@ -60,7 +60,8 @@
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "example": "node example/muta_sdk_demo.js"
   },
   "types": "lib/index.d.ts"
 }
