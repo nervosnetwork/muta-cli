@@ -3237,10 +3237,10 @@ ms@^2.1.1:
   resolved "https://registry.npm.taobao.org/ms/download/ms-2.1.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fms%2Fdownload%2Fms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
-muta-sdk@^0.7.0-alpha.0:
-  version "0.7.0-alpha.0"
-  resolved "https://registry.npm.taobao.org/muta-sdk/download/muta-sdk-0.7.0-alpha.0.tgz#dd55419bc7551e1fdbbce0c264849a2ab16ac25e"
-  integrity sha1-3VVBm8dVHh/bvODCZISaKrFqwl4=
+muta-sdk@^0.7.0-alpha.1:
+  version "0.7.0-alpha.1"
+  resolved "https://registry.npm.taobao.org/muta-sdk/download/muta-sdk-0.7.0-alpha.1.tgz#d535f8ee98a7c1c2ef5ffcbe954e541bd693898a"
+  integrity sha1-1TX47pinwcLvX/y+lU5UG9aTiYo=
   dependencies:
     "@graphql-codegen/typescript" "^1.10.0"
     "@graphql-codegen/typescript-graphql-request" "^1.10.0"
