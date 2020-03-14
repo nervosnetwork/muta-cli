@@ -9,6 +9,7 @@ export default class REPL extends Command {
     // name: flags.string({char: 'n', description: 'name to print'}),
     // flag with no value (-f, --force)
     // force: flags.boolean({char: 'f'}),
+    endpoint: flags.string({char: 'e', description: 'chain endpoint to connect'}),
   }
 
   static args = []
@@ -48,12 +49,14 @@ export default class REPL extends Command {
         }
     }
 
+    const endpoint = flags.endpoint || 'http://127.0.0.1:8000/graphql';
+
     const c = repl.start({ prompt: '> ', eval: myEval }).context;
     const lodash = require('lodash');
     c.lodash = lodash;
     c.muta_sdk = require('muta-sdk');
     const Muta = c.muta_sdk.Muta;
-    c.muta = c.muta_sdk.Muta.createDefaultMutaInstance();
+    c.muta = new c.muta_sdk.Muta({ endpoint });
     c.client = c.muta.client();
     const mnemonic = Muta.hdWallet.generateMnemonic();
     c.wallet = new Muta.hdWallet(mnemonic);

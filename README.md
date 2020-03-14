@@ -19,7 +19,7 @@ $ npm install -g muta-cli
 $ muta-cli COMMAND
 running command...
 $ muta-cli (-v|--version|version)
-muta-cli/0.0.4 darwin-x64 node-v10.15.0
+muta-cli/0.0.5 darwin-x64 node-v10.15.0
 $ muta-cli --help [COMMAND]
 USAGE
   $ muta-cli COMMAND
@@ -57,8 +57,9 @@ USAGE
   $ muta-cli repl
 
 OPTIONS
-  -h, --help  show CLI help
+  -e, --endpoint=endpoint  chain endpoint to connect
+  -h, --help               show CLI help
 ```
 
-_See code: [src/commands/repl.ts](https://github.com/huwenchao/muta-cli/blob/v0.0.4/src/commands/repl.ts)_
+_See code: [src/commands/repl.ts](https://github.com/huwenchao/muta-cli/blob/v0.0.5/src/commands/repl.ts)_
 <!-- commandsstop -->

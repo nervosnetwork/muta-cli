@@ -16,32 +16,51 @@ async function main() {
 
     console.log('\nasset service:\n');
     const account = accounts[0];
-    const service = new muta_sdk.AssetService(client, account);
-    const HT = await service.createAsset({name: 'Huobi Token', supply: 1000000000, symbol: 'HT'});
-    console.log(HT);
+    const create_asset_tx = await client.composeTransaction({
+        method: 'create_asset',
+        payload: {
+            name: 'MUTA Token',
+            supply: 1000000000,
+            symbol: 'MT',
+            precision: 2,
+        },
+        serviceName: 'asset',
+    });
+    let txHash = await client.sendTransaction(account.signTransaction(create_asset_tx));
+    let receipt = await client.getReceipt(txHash);
+    console.log(receipt);
+    const MT = JSON.parse(receipt.response.ret);
+    const asset_id = MT.id;
     // console.log(await service.getBalance(HT.asset_id, account.address));
     let balance = await client.queryService({
         serviceName: 'asset',
         method: 'get_balance',
-        payload: JSON.stringify({asset_id: HT.asset_id, user: account.address}),
+        payload: JSON.stringify({asset_id, user: account.address}),
     });
     console.log(balance);
     const to = accounts[1].address;
-    await service.transfer({
-      asset_id: HT.asset_id,
-      to,
-      value: 100
+    const transfer_tx = await client.composeTransaction({
+        method: 'transfer',
+        payload: {
+            asset_id,
+            to,
+            value: 100,
+        },
+        serviceName: 'asset',
     });
+    txHash = await client.sendTransaction(account.signTransaction(transfer_tx));
+    receipt = await client.getReceipt(txHash);
+    console.log(receipt);
     balance = await client.queryService({
         serviceName: 'asset',
         method: 'get_balance',
-        payload: JSON.stringify({asset_id: HT.asset_id, user: account.address}),
+        payload: JSON.stringify({asset_id, user: account.address}),
     });
     console.log(balance);
     balance = await client.queryService({
         serviceName: 'asset',
         method: 'get_balance',
-        payload: JSON.stringify({asset_id: HT.asset_id, user: to}),
+        payload: JSON.stringify({asset_id, user: to}),
     });
     console.log(balance);
 
@@ -86,7 +105,7 @@ async function main() {
         },
         serviceName: 'riscv',
     });
-    const txHash = await client.sendTransaction(account.signTransaction(tx));
+    txHash = await client.sendTransaction(account.signTransaction(tx));
     receipt = await client.getReceipt(txHash);
     console.log(receipt);
     const address = JSON.parse(receipt.response.ret).address;
