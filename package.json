@@ -7,11 +7,14 @@
   },
   "bugs": "https://github.com/huwenchao/muta-cli/issues",
   "dependencies": {
+    "@mutadev/muta-sdk": "0.2.0-dev.0",
+    "@mutadev/service": "0.2.0-dev.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/graphql": "^14.5.0",
+    "graphql": "^15.2.0",
     "lodash": "^1.0.0",
-    "muta-sdk": "^0.8.0-alpha.0",
     "node-repl-await": "^0.1.1",
     "tslib": "^1"
   },

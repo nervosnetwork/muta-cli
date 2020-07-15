@@ -1,7 +1,7 @@
 const lodash = require('lodash');
-const muta_sdk = require('muta-sdk');
+const muta_sdk = require('@mutadev/muta-sdk');
 const Muta = muta_sdk.Muta;
-const muta = muta_sdk.Muta.createDefaultMutaInstance();
+const muta = new muta_sdk.Muta();
 const client = muta.client();
 const mnemonic = Muta.hdWallet.generateMnemonic();
 const wallet = new Muta.hdWallet(mnemonic);
@@ -25,6 +25,7 @@ async function main() {
             precision: 2,
         },
         serviceName: 'asset',
+        sender: account.address,
     });
     let txHash = await client.sendTransaction(account.signTransaction(create_asset_tx));
     let receipt = await client.getReceipt(txHash);
