@@ -1,14 +1,15 @@
 {
   "name": "muta-cli",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "author": "me@huwenchao.com",
   "bin": {
     "muta-cli": "./bin/run"
   },
   "bugs": "https://github.com/huwenchao/muta-cli/issues",
   "dependencies": {
-    "@mutadev/muta-sdk": "0.2.0-dev.0",
-    "@mutadev/service": "0.2.0-dev.0",
+    "@mutadev/muta-sdk": "0.2.0-dev.2",
+    "@mutadev/service": "0.2.0-dev.2",
+    "@mutadev/client": "0.2.0-dev.2",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
