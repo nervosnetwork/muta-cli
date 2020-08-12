@@ -1,6 +1,8 @@
 {
-  "extends": [
-    "oclif",
-    "oclif-typescript"
-  ]
+  "extends": ["oclif", "oclif-typescript"],
+  "rules": {
+    "no-console": "off",
+    "semi": "off",
+    "object-curly-spacing": "off"
+  }
 }

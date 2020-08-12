@@ -7,9 +7,9 @@
   },
   "bugs": "https://github.com/huwenchao/muta-cli/issues",
   "dependencies": {
-    "@mutadev/muta-sdk": "0.2.0-dev.2",
-    "@mutadev/service": "0.2.0-dev.2",
-    "@mutadev/client": "0.2.0-dev.2",
+    "@mutadev/muta-sdk": "0.2.0-beta.4",
+    "@mutadev/service": "0.2.0-beta.4",
+    "@mutadev/wallet": "0.2.0-beta.4",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
@@ -65,7 +65,7 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "example": "node example/muta_sdk_demo.js"
+    "example": "node example/muta-sdk-demo.js"
   },
   "types": "lib/index.d.ts"
 }
